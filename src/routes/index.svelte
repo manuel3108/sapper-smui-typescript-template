@@ -1,5 +1,11 @@
-<script>
+<script lang="typescript">
 	import Button, {Label, Icon} from '@smui/button';
+
+	const hello: string = 'world';
+	console.log(hello)
+
+	import Script from './script'
+	new Script();
 </script>
 
 <style>

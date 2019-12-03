@@ -5,12 +5,16 @@ const pkg = require('./package.json');
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 
-const extensions = ['.mjs', '.js', '.json', '.svelte', '.html'];
+const extensions = ['.ts', '.tsx', '.mjs', '.js', '.json', '.svelte', '.html'];
 const mainFields = ['svelte', 'module', 'browser', 'main'];
 
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
+const sveltePreprocess = require('svelte-preprocess');
+
+const preprocess = require("./svelte.config.js");
 
 const sassOptions = {
   includePaths: [
@@ -34,6 +38,7 @@ module.exports = {
 					use: {
 						loader: 'svelte-loader',
 						options: {
+							preprocess,
 							dev,
 							hydratable: true,
 							hotReload: false // pending https://github.com/sveltejs/svelte/issues/2377
@@ -53,6 +58,10 @@ module.exports = {
 							},
 						},
 					],
+				},
+				{ 
+					test: /\.tsx?$/,
+					loader: "ts-loader"
 				}
 			]
 		},
@@ -96,6 +105,7 @@ module.exports = {
 					use: {
 						loader: 'svelte-loader',
 						options: {
+							preprocess,
 							css: false,
 							generate: 'ssr',
 							dev
@@ -115,6 +125,10 @@ module.exports = {
 							},
 						},
 					],
+				},
+				{ 
+					test: /\.tsx?$/,
+					loader: "ts-loader"
 				}
 			]
 		},
