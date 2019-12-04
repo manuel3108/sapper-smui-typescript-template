@@ -1,6 +1,8 @@
-# sapper-smui-template
+# sapper-smui-typescript-template
 
-The default [Sapper](https://github.com/sveltejs/sapper) template using webpack, with included support for [SMUI](https://github.com/hperrin/svelte-material-ui).
+The default [Sapper](https://github.com/sveltejs/sapper) template using webpack, with included support for [SMUI](https://github.com/hperrin/svelte-material-ui) and [Typescript](https://github.com/microsoft/TypeScript).
+
+If you don't want Typescript support, have a look at [sapper-smui-template](https://github.com/manuel3108/sapper-smui-typescript-template)
 
 
 ## Getting started
@@ -8,10 +10,10 @@ The default [Sapper](https://github.com/sveltejs/sapper) template using webpack,
 
 ### Using `degit`
 
-[`degit`](https://github.com/Rich-Harris/degit) is a scaffolding tool that lets you create a directory from a branch in a repository. Use either the `rollup` or `webpack` branch in `sapper-template`:
+[`degit`](https://github.com/Rich-Harris/degit) is a scaffolding tool that lets you create a directory from a branch in a repository:
 
 ```bash
-npx degit "manuel3108/sapper-smui-template" my-app
+npx degit "manuel3108/sapper-smui-typescript-template" my-app
 ```
 
 
