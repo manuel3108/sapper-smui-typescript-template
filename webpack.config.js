@@ -1,3 +1,5 @@
+const path = require('path')
+
 const webpack = require('webpack');
 const config = require('sapper/config/webpack.js');
 const pkg = require('./package.json');
@@ -5,10 +7,10 @@ const pkg = require('./package.json');
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
 
+const alias = { svelte: path.resolve('node_modules', 'svelte') };
 const extensions = ['.ts', '.tsx', '.mjs', '.js', '.json', '.svelte', '.html'];
 const mainFields = ['svelte', 'module', 'browser', 'main'];
 
-const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
@@ -29,7 +31,8 @@ module.exports = {
 		output: config.client.output(),
 		resolve: { 
 			extensions, 
-			mainFields, 
+			mainFields,
+			alias
 		},
 		module: {
 			rules: [
@@ -96,6 +99,7 @@ module.exports = {
 		resolve: { 
 			extensions, 
 			mainFields,
+			alias
     },
 		externals: Object.keys(pkg.dependencies).concat('encoding'),
 		module: {
