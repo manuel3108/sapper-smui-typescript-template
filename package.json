@@ -29,7 +29,7 @@
     "style-loader": "^1.2.1",
     "svelte": "^3.24.0",
     "svelte-loader": "^2.9.0",
-    "svelte-preprocess": "^3.9.11",
+    "svelte-preprocess": "^4.0.9",
     "ts-loader": "^8.0.1",
     "typescript": "^3.9.7",
     "webpack": "^4.44.1"
