@@ -30,7 +30,7 @@
     "svelte": "^3.23.2",
     "svelte-loader": "^2.9.0",
     "svelte-preprocess": "^3.9.11",
-    "ts-loader": "^7.0.5",
+    "ts-loader": "^8.0.1",
     "typescript": "^3.9.7",
     "webpack": "^4.44.1"
   }
